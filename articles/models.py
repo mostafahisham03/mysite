@@ -12,7 +12,7 @@ class Article(models.Model):
     body = models.TextField()
     # DateTimeField is a field that will store date and time.
     date = models.DateTimeField(auto_now_add=True)
-  # image = models.ImageField(upload_to='images/') # ImageField is a field for uploading images.
+    thumb = models.ImageField(default = 'default.png', blank = True) # ImageField is a field for uploading images.
   #  author = models.TextField() # TextField is for long text without a limit. Sounds perfect for blog posts, right?
 
     def __str__(self):
