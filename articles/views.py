@@ -21,7 +21,7 @@ def article_detail(request, slug):
 def article_create(request):
     if(request.method == 'POST'):
         form = forms.CreateArticle(request.POST, request.FILES)
-        if form.is_valid:
+        if form.is_valid():
             article_instance = form.save(commit=False)
             article_instance.author = request.user
             article_instance.save()
