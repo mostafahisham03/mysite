@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -12,8 +12,10 @@ class Article(models.Model):
     body = models.TextField()
     # DateTimeField is a field that will store date and time.
     date = models.DateTimeField(auto_now_add=True)
-    thumb = models.ImageField(default = 'default.png', blank = True) # ImageField is a field for uploading images.
-  #  author = models.TextField() # TextField is for long text without a limit. Sounds perfect for blog posts, right?
+    # ImageField is a field for uploading images.
+    thumb = models.ImageField(default='default.png', blank=True)
+    # TextField is for long text without a limit. Sounds perfect for blog posts, right?
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return self.title
