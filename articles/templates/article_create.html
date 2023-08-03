@@ -1,6 +1,6 @@
 {% extends 'base_layout.html' %} {% block content%}
 <div class="create-article">
-  <h2>Create Article</h2>
+  <h2>Create New Article</h2>
   <form
     class="site-form"
     action="{%url 'articles:create' %}"
@@ -11,5 +11,5 @@
     <input type="submit" value="Create" />
   </form>
 </div>
-
+<script src="/static/slugify.js"></script>
 {% endblock %}
